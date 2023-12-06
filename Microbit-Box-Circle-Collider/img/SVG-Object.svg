@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="../css/style.css" type="text/css"?>
+
+<svg id="vb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+    <!-- <rect id="bx-collider" x="860" y="440" width="200" height="200" fill="red" stroke-width="0"/>
+    <rect id="bx-01" x="0" y="0" width="200" height="200" fill="#93278f" stroke-width="0" opacity="0.8"/> -->
+    <circle id="c-collider" cx="960" cy="540" r="100" fill="red" stroke-width="0"/>
+    <circle id="c-01" cx="100" cy="100" r="100" fill="#93278f" stroke-width="0" opacity="0.8"/>
+
+
+</svg>

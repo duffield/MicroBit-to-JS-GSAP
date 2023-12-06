@@ -1,0 +1,66 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+main {
+  width: 960px;
+  margin: auto;
+} 
+
+svg {
+  border: 1px solid magenta;
+}
+
+.box {
+  fill: #dd8324;
+}
+
+#UIContainer {
+  display: flex;
+  flex: 1;
+  /* border: 1px solid blue; */
+}
+
+#searchButton {
+  height: 4rem;
+  border: 2px solid black;
+  padding: 1rem;
+  margin-top: 0.5rem;
+}
+
+#searchButton:hover {
+  cursor: pointer;
+}
+
+fieldset {
+  display: inline-block;
+  height: 100px;
+  width: 165px;
+  /* padding: 0.5rem; */
+  border: none;
+  margin-left: 1rem;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/* ! For final you don't need the UI unless you want it!   */
+/* fieldset, ul {
+  display: none;
+} */
+
