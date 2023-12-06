@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-ca">
+  <head>
+    <!-- Specify Character Encoding -->
+    <meta charset="UTF-8" />
+    <!-- Controls Layout on Browsers -->
+    <meta name="viewport" content="width=device-width" minimum-scale="1.0" />
+    <!-- Who are you? -->
+    <meta name="author" content="Your Name" />
+    <!-- Attach Stylesheet -->
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <!-- Name Your Page -->
+    <title>Micro:bit to SVG Template</title>
+  </head>
+
+  <body>
+    <main>
+      <h1>Micro:bit to SVG</h1>
+      <!-- ! THIS IS INLINE YOUR PROJECT WILL USE IT AS AN EMBEDDING OBJECT -->
+      <!-- <svg id="vb" viewbox="0 0 1600 900">
+        <rect id="bx" class="box" x="0" y="0" width="200px" height="200px"></rect>
+      </svg> -->
+
+      <!-- ! 1.0 USE EMBEDDED SVG OBJECT -->
+      <object id="SVGObject" data="img/SVG-Object.svg" type="image/svg+xml"></object>
+
+      <section id="UIContainer">
+        <!-- ! 1.1 Delete the onClick function -->
+        <button id="searchButton">Search Device</button>
+
+        <fieldset id="buttonContainer">
+          <h2>Buttons:</h2>
+          <ul class="property">
+            <li>Button A: <span id="buttonA" class="value"></span></li>
+            <li>Button B: <span id="buttonB" class="value"></span></li>
+          </ul>
+        </fieldset>
+
+        <fieldset>
+          <h2>Accelerometer:</h2>
+          <ul>
+            <li>X: <span id="accX" class="value"></span></li>
+            <li>Y: <span id="accY" class="value"></span></li>
+            <li>Z: <span id="accZ" class="value"></span></li>
+            <li>Temperature <span id="temperature" class="value"></span></li>
+          </ul>
+        </fieldset>
+
+        <fieldset>
+          <h2>Scrolling Text</h2>
+          <input type="text" id="newText"/>
+          <button id="textUpdater">Update</button>
+          <ul>
+            <li>My Text: <span id="myText" class="value"></span></li>
+          </ul>
+        </fieldset>
+
+        <fieldset>
+          <h2>LED Matrix</h2>
+          <div id="matrixContainer">
+            <div class="matrixRow">
+              <input type="checkbox" data-x="0" data-y="0"/>
+              <input type="checkbox" data-x="0" data-y="1"/>
+              <input type="checkbox" data-x="0" data-y="2"/>
+              <input type="checkbox" data-x="0" data-y="3"/>
+              <input type="checkbox" data-x="0" data-y="4"/>
+            </div>
+            <div class="matrixRow">
+              <input type="checkbox" data-x="1" data-y="0"/>
+              <input type="checkbox" data-x="1" data-y="1"/>
+              <input type="checkbox" data-x="1" data-y="2"/>
+              <input type="checkbox" data-x="1" data-y="3"/>
+              <input type="checkbox" data-x="1" data-y="4"/>
+            </div>
+            <div class="matrixRow">
+              <input type="checkbox" data-x="2" data-y="0"/>
+              <input type="checkbox" data-x="2" data-y="1"/>
+              <input type="checkbox" data-x="2" data-y="2"/>
+              <input type="checkbox" data-x="2" data-y="3"/>
+              <input type="checkbox" data-x="2" data-y="4"/>
+            </div>
+            <div class="matrixRow">
+              <input type="checkbox" data-x="3" data-y="0"/>
+              <input type="checkbox" data-x="3" data-y="1"/>
+              <input type="checkbox" data-x="3" data-y="2"/>
+              <input type="checkbox" data-x="3" data-y="3"/>
+              <input type="checkbox" data-x="3" data-y="4"/>
+            </div>
+            <div class="matrixRow">
+              <input type="checkbox" data-x="4" data-y="0"/>
+              <input type="checkbox" data-x="4" data-y="1"/>
+              <input type="checkbox" data-x="4" data-y="2"/>
+              <input type="checkbox" data-x="4" data-y="3"/>
+              <input type="checkbox" data-x="4" data-y="4"/>
+            </div>
+          </div>
+        </fieldset>
+
+      </section>
+    </main>
+
+    <!-- *  GSAP on server  -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script> -->
+
+    <!-- * Add Micro:bit library to our page -->
+    <script type="text/javascript" src="js/vendor/microBit.js"></script>
+    
+    <!-- * Local GSAP3  -->
+    <script type="text/javascript" src="js/vendor/gsap.min.js"></script>
+
+    <!-- * Add your JS Script -->
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>

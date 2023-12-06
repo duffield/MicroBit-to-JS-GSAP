@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-ca">
+  <head>
+    <!-- Specify Character Encoding -->
+    <meta charset="UTF-8" />
+    <!-- Controls Layout on Browsers -->
+    <meta name="viewport" content="width=device-width" minimum-scale="1.0" />
+    <!-- Who are you? -->
+    <meta name="author" content="Your Name" />
+    <!-- Attach Stylesheet -->
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <!-- Name Your Page -->
+    <title>Micro:bit to SVG Template</title>
+  </head>
+
+  <body>
+    <main>
+      <h1>Micro:bit to SVG</h1>
+      <!-- ! THIS IS INLINE YOUR PROJECT WILL USE IT AS AN EMBEDDING OBJECT -->
+      <svg id="vb" viewbox="0 0 1600 900">
+        <rect id="bx" class="box" x="0" y="0" width="200px" height="200px"></rect>
+      </svg>
+
+      <section id="UIContainer">
+        <button id="searchButton" onClick="searchDevice()">Search Device</button>
+
+        <fieldset id="buttonContainer">
+          <h2>Buttons:</h2>
+          <ul class="property">
+            <li>Button A: <span id="buttonA" class="value"></span></li>
+            <li>Button B: <span id="buttonB" class="value"></span></li>
+            <li>Button A Count: <span id="buttonACount" class="value"></span></li>
+          </ul>
+        </fieldset>
+    
+      </section>
+    </main>
+
+    <!-- *  GSAP on server  -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script> -->
+
+    <!-- * Add Micro:bit library to our page -->
+    <script type="text/javascript" src="js/vendor/microBit.js"></script>
+    
+    <!-- * Local GSAP3  -->
+    <script type="text/javascript" src="js/vendor/gsap.min.js"></script>
+
+    <!-- * Add your JS Script -->
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>

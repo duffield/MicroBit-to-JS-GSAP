@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="myObj" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <g id="background">
+    <rect width="200" height="200" fill="#662d91" stroke-width="0"/>
+  </g>
+  <g id="parent">
+    <rect id="childBox-2" x="54" y="54" width="92" height="92" fill="#ff931e" stroke-width="0"/>
+    <rect id="childBox-1" x="78" y="78" width="44" height="44" fill="#7ac943" stroke-width="0"/>
+    <g id="Layer_3" data-name="Layer 3">
+      <rect x="89" y="89" width="22" height="22" fill="#ff7bac" stroke-width="0"/>
+    </g>
+  </g>
+</svg>
