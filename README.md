@@ -1,19 +1,23 @@
 MicroBit-to-JS-GSAP
 
 Kyle Duffield
+
 http://www.kyleduffield.com
+
 
 
 *** Note this requires a Chrome based browser to work and is experimental! ***
 
-Simple examples using BBC Micro:bit to JS and GSAP3
+SIMPLE EXAMPLES WITH BBC MICRO:BIT SVG AND JS/GSAP3
 
 This is a modification of antefact’s microBit.js example where they connected the micro:bit to the browser using p5.js. See here for further documentation: https://antefact.github.io/microBit.js/ . This version removes anything to do with p5.js and brings it into vanilla JS with examples that use SVG and GSAP3 animations. 
 
 Micro:bit Web Bluetooth Library References
 https://www.npmjs.com/package/microbit-web-bluetooth 
 
-Getting Started
+
+
+GETTING STARTED
 
 Connecting to the Library:
 
@@ -28,6 +32,8 @@ Connecting to the Library:
 
 4. Run examples in this repo using a local development server (i.e., Live Server).
 Troubleshooting:
+
+TROUBLESHOOTING
 
 Pairing Bluetooth not working:
 Is your Bluetooth turned on on your OS?
