@@ -23,36 +23,6 @@ window.onload = function() {
     let currentCollide = false; 
     let prevCollide = currentCollide; 
 
-    // // ! Simple Box Collision Examples
-    // function intersect(r1, r2) {
-    //    // Got Collision Detection Inspiration from this: https://www.inkfood.com/collision-detection-with-svg/ 
-
-    //     r1 = r1.getBoundingClientRect();
-    //     r2 = r2.getBoundingClientRect();
-
-    //     // Check if two bounding boxes overlap
-    //     return !(r2.left > r1.right ||
-    //         r2.right < r1.left ||
-    //         r2.top > r1.bottom ||
-    //         r2.bottom < r1.top);
-    // }
-
-    function circlesCollide(circle1, circle2) {
-        // Get the positions and radii of the circles
-        let x1 = parseFloat(circle1.getAttribute('cx'));
-        let y1 = parseFloat(circle1.getAttribute('cy'));
-        let r1 = parseFloat(circle1.getAttribute('r'));
-        let x2 = parseFloat(circle2.getAttribute('cx'));
-        let y2 = parseFloat(circle2.getAttribute('cy'));
-        let r2 = parseFloat(circle2.getAttribute('r'));
-      
-        // Calculate the distance between the centers of the two circles
-        let distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
-      
-        // Check if the distance is less than the sum of the radii
-        return distance < (r1 + r2);
-    }
-
     // *  ****************** 5.0 Setup our Viewbox Dimension Variables
     let svgWidth = 1920;
     let svgHeight = 1080;
@@ -64,7 +34,6 @@ window.onload = function() {
     // ** 2.1 Declare a variable to hold the count
     let buttonACurrentCount = 0;
     
-
     // **************** 4.0 Declare Accelerometer values
     let ax;
     let ay;
@@ -75,10 +44,7 @@ window.onload = function() {
     let ayField = document.getElementById("accY");
     let azField = document.getElementById("accZ");
 
-    // ****************** 6.0 Delcare Temperature variables
-    let tempField = document.getElementById("temperature");
-
-
+    // * Get Search
     searchBtn.addEventListener('click', searchDevice);
 
     // *** 1.2 Declare a function and search for the Micro:bit ***
@@ -129,25 +95,24 @@ window.onload = function() {
         // Set current collide to the return of our intersect function
         currentCollide = circlesCollide(c, cCollider);
 
-        console.log(currentCollide);
+        // * Are we colliding?
+        console.log("Worlds Collide: ", circlesCollide(c, cCollider));
 
-        // if(currentCollide === true && prevCollide === false) {
-        //     console.log("COLLISION!");
-        //     gsap.to(cCollider,{
-        //         fill: "cyan",
-        //         duration: 1
-        //     });
-        // } else if (currentCollide === false && prevCollide === true) {
-        //     gsap.to(cCollider,{
-        //         fill: "red",
-        //         duration: 1
-        //     });
-        // }
+        if(currentCollide === true && prevCollide === false) {
+            console.log("COLLISION!");
+            gsap.to(cCollider,{
+                fill: "blue",
+                duration: 1
+            });
+        } else if (currentCollide === false && prevCollide === true) {
+            gsap.to(cCollider,{
+                fill: "red",
+                duration: 1
+            });
+        }
+
         // Update our prevCollide Variable
         prevCollide = currentCollide;
-
-        // ** 6.1 Add our temperature value to our HTML fields
-        tempField.innerHTML = microBit.getTemperature();
 
     });
 
@@ -174,4 +139,30 @@ window.onload = function() {
     microBit.setButtonBCallback(function() {
         console.log("Button B is Pressed!");
     });
+
+      // Circle Collider Resources
+    // https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection 
+
+    function circlesCollide(circle1, circle2) {
+        // ! MUST USE GET PROPRTY! GetAtrribute only gets the original SVG value vs after the GSAP transformations
+        // ! Thanks ChatGPT <3 
+        // Get the positions and radii of the circles
+        let x1 = gsap.getProperty(circle1, 'cx');
+        let y1 =  gsap.getProperty(circle1, 'cy');
+        let r1 = gsap.getProperty(circle1, 'r');
+        let x2 = gsap.getProperty(circle2, 'cx');
+        let y2 =  gsap.getProperty(circle2, 'cy');
+        let r2 = gsap.getProperty(circle2, 'r');
+      
+        // Calculate the distance between the centers of the two circles
+        let distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+
+        // * Uncomment to see it in action! 
+        // console.log("C1: ", x1, y1, r1);
+        // console.log("C2: ", x2, y2, r2);
+        // console.log("Distance: ", distance);
+
+        // Check if the distance is less than the sum of the radii
+        return distance < (r1 + r2);
+    }
 }
